@@ -2,8 +2,15 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="auth-server.main" target="21" />
+      <module name="auth-server.test" target="21" />
       <module name="auth-service" target="21" />
-      <module name="config-service" target="21" />
+      <module name="config.main" target="21" />
+      <module name="config.test" target="21" />
+      <module name="msa-dashboard.main" target="21" />
+      <module name="msa-dashboard.test" target="21" />
+      <module name="user-server.main" target="21" />
+      <module name="user-server.test" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

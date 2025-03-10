@@ -1,0 +1,42 @@
+package msaspring.productservice
+
+import org.springframework.web.bind.annotation.*
+import reactor.core.publisher.Flux
+import reactor.core.publisher.Mono
+
+@RestController
+@RequestMapping("/products")
+class ProductController(private val productRepository: ProductRepository) {
+
+    // 모든 상품 조회 (Flux)
+    @GetMapping
+    fun getAllProducts(): Flux<Product> = productRepository.findAll()
+
+    // 새로운 상품 생성 (Mono)
+    @PostMapping
+    fun createProduct(@RequestBody product: Product): Mono<Product> = productRepository.save(product)
+
+    // 특정 상품 조회 (Mono)
+    @GetMapping("/{id}")
+    fun getProduct(@PathVariable id: Long): Mono<Product> =
+        productRepository.findById(id)
+            .switchIfEmpty(Mono.error(RuntimeException("Product not found with id: $id")))
+
+    // 상품 업데이트 (Mono)
+    @PutMapping("/{id}")
+    fun updateProduct(@PathVariable id: Long, @RequestBody updatedProduct: Product): Mono<Product> {
+        return productRepository.findById(id).flatMap { existingProduct ->
+            val productToUpdate = existingProduct.copy(
+                name = updatedProduct.name,
+                description = updatedProduct.description,
+                price = updatedProduct.price,
+                stock = updatedProduct.stock
+            )
+            productRepository.save(productToUpdate)
+        }
+    }
+
+    // 상품 삭제 (Mono<Void>)
+    @DeleteMapping("/{id}")
+    fun deleteProduct(@PathVariable id: Long): Mono<Void> = productRepository.deleteById(id)
+}

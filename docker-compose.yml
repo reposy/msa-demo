@@ -19,7 +19,7 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=default
 
-  order-service:
+  :
     image: eclipse-temurin:21-jdk-alpine
     volumes:
       - ./order-service/build/libs/order-service-0.0.1-SNAPSHOT.jar:/app/app.jar

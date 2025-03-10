@@ -5,10 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522ea350-c19c-4d2b-a617-bd704c94cce7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/Order.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/test/kotlin/msaspring/orderservice/OrderControllerIntegrationTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/test/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/test/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/Product.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/test/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/test/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/User.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/test/kotlin/msaspring/userserver/UserControllerIntegrationTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/test/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/test/resources/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/order-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserServerApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserServiceApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/kotlin/msaspring/userserver/UserServerApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/kotlin/msaspring/userserver/UserServiceApplicationTests.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +70,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$/order-service">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -63,6 +86,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
+        <option value="Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -97,10 +122,14 @@
   &quot;keyToString&quot;: {
     &quot;Docker.dokcerRun.executor&quot;: &quot;Run&quot;,
     &quot;Gradle.Build config-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OrderControllerIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OrderServiceApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.testGradle.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.ConfigApplicationKt.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.ConfigApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -111,9 +140,10 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -140,12 +170,32 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Docker.dokcerRun">
-    <configuration name="ConfigApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="msaspring.configserver.ConfigApplicationKt" />
+  <component name="RunManager" selected="Gradle.testGradle">
+    <configuration name="testGradle" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ConfigApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-service.main" />
-      <shortenClasspath name="NONE" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/config-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="msaspring.configserver.ConfigApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -231,7 +281,8 @@
     </configuration>
     <list>
       <item itemvalue="Docker.dokcerRun" />
-      <item itemvalue="Kotlin.ConfigApplicationKt" />
+      <item itemvalue="Gradle.testGradle" />
+      <item itemvalue="Spring Boot.ConfigApplication (1)" />
       <item itemvalue="Spring Boot.ConfigApplication" />
       <item itemvalue="Spring Boot.ConfigApplication (2)" />
       <item itemvalue="Spring Boot.MsaDashboardApplication" />
@@ -243,11 +294,6 @@
       <item itemvalue="Spring Boot.UserServerApplication" />
       <item itemvalue="Spring Boot.UserServerApplication (1)" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Kotlin.ConfigApplicationKt" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -266,7 +312,8 @@
       <option name="presentableId" value="Default" />
       <updated>1741564207530</updated>
       <workItem from="1741564208537" duration="6600000" />
-      <workItem from="1741572574832" duration="4249000" />
+      <workItem from="1741572574832" duration="9982000" />
+      <workItem from="1741582668956" duration="325000" />
     </task>
     <servers />
   </component>

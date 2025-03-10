@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: api-gateway
+  graphql:
+    path: /graphql
+    schema:
+      locations: classpath:graphql/

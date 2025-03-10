@@ -4,5 +4,6 @@ include(
     "dashboard-service",
     "order-service",
     "product-service",
-    "user-service"
+    "user-service",
+    "api-gateway"
 )

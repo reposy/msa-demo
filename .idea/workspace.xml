@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="522ea350-c19c-4d2b-a617-bd704c94cce7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,7 +266,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741564207530</updated>
       <workItem from="1741564208537" duration="6600000" />
-      <workItem from="1741572574832" duration="3685000" />
+      <workItem from="1741572574832" duration="4249000" />
     </task>
     <servers />
   </component>

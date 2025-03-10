@@ -10,4 +10,4 @@ spring:
         git:
           uri: https://github.com/reposy/msa-demo/
           searchPaths: configs
-          default-label: main
+          default-label: master

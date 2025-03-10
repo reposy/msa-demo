@@ -6,6 +6,8 @@ services:
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8888:8888"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
 
   dashboard-service:
     image: eclipse-temurin:21-jdk-alpine
@@ -14,6 +16,8 @@ services:
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
 
   order-service:
     image: eclipse-temurin:21-jdk-alpine
@@ -22,6 +26,8 @@ services:
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
 
   product-service:
     image: eclipse-temurin:21-jdk-alpine
@@ -30,6 +36,8 @@ services:
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
 
   user-service:
     image: eclipse-temurin:21-jdk-alpine
@@ -38,3 +46,46 @@ services:
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+
+  postgres-user:
+    image: postgres:15
+    container_name: postgres-user
+    environment:
+      POSTGRES_DB: userdb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - postgres-user-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+
+  postgres-product:
+    image: postgres:15
+    container_name: postgres-product
+    environment:
+      POSTGRES_DB: productdb
+      POSTGRES_USER: product
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - postgres-product-data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+
+  postgres-order:
+    image: postgres:15
+    container_name: postgres-order
+    environment:
+      POSTGRES_DB: orderdb
+      POSTGRES_USER: order
+      POSTGRES_PASSWORD: secret
+    volumes:
+      - postgres-order-data:/var/lib/postgresql/data
+    ports:
+      - "5435:5432"
+
+volumes:
+  postgres-user-data:
+  postgres-product-data:
+  postgres-order-data:

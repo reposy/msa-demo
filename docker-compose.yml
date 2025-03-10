@@ -1,0 +1,40 @@
+services:
+  config-service:
+    image: eclipse-temurin:21-jdk-alpine
+    volumes:
+      - ./config-service/build/libs/config-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    command: ["java", "-jar", "/app/app.jar"]
+    ports:
+      - "8888:8888"
+
+  dashboard-service:
+    image: eclipse-temurin:21-jdk-alpine
+    volumes:
+      - ./dashboard-service/build/libs/dashboard-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    command: ["java", "-jar", "/app/app.jar"]
+    ports:
+      - "8080:8080"
+
+  order-service:
+    image: eclipse-temurin:21-jdk-alpine
+    volumes:
+      - ./order-service/build/libs/order-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    command: ["java", "-jar", "/app/app.jar"]
+    ports:
+      - "8081:8081"
+
+  product-service:
+    image: eclipse-temurin:21-jdk-alpine
+    volumes:
+      - ./product-service/build/libs/product-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    command: ["java", "-jar", "/app/app.jar"]
+    ports:
+      - "8082:8082"
+
+  user-service:
+    image: eclipse-temurin:21-jdk-alpine
+    volumes:
+      - ./user-service/build/libs/user-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+    command: ["java", "-jar", "/app/app.jar"]
+    ports:
+      - "8083:8083"

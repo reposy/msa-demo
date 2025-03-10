@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522ea350-c19c-4d2b-a617-bd704c94cce7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dashboard-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/user-service-prod.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/kotlin/msaspring/configserver/ConfigApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/kotlin/msaspring/configserver/ConfigApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/Dockerfile" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +85,10 @@
     "accountId": "ece71e60-9c08-45f4-ad58-36f839e26a0c"
   }
 }]]></component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -99,6 +99,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Docker.dokcerRun.executor": "Run",
     "Gradle.Build config-service.executor": "Run",
     "Kotlin.ConfigApplicationKt.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -143,19 +144,12 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ConfigApplication (1)">
+  <component name="RunManager" selected="Docker.dokcerRun">
     <configuration name="ConfigApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="msaspring.configserver.ConfigApplicationKt" />
       <module name="config-service.main" />
       <shortenClasspath name="NONE" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/config-service" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfigApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="config-service.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="msaspring.configserver.ConfigApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -230,10 +224,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="dokcerRun" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.dokcerRun" />
       <item itemvalue="Kotlin.ConfigApplicationKt" />
       <item itemvalue="Spring Boot.ConfigApplication" />
-      <item itemvalue="Spring Boot.ConfigApplication (1)" />
       <item itemvalue="Spring Boot.ConfigApplication (2)" />
       <item itemvalue="Spring Boot.MsaDashboardApplication" />
       <item itemvalue="Spring Boot.MsaDashboardApplication (1)" />
@@ -267,7 +270,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741564207530</updated>
       <workItem from="1741564208537" duration="6600000" />
-      <workItem from="1741572574832" duration="1230000" />
+      <workItem from="1741572574832" duration="2662000" />
     </task>
     <servers />
   </component>

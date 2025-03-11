@@ -1,15 +1,10 @@
 spring:
   application:
     name: product-service
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://postgres-product:5432/productdb
-    username: product
+  r2dbc:
+    url: r2dbc:postgresql://postgres-product:5432/productdb
+    username: user
     password: secret
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
 
 server:
-  port: 8082
+  port: 8083

@@ -1,10 +1,15 @@
 spring:
   application:
     name: order-service
-  r2dbc:
-    url: r2dbc:postgresql://postgres-order:5432/orderdb
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres-order:5432/orderdb
     username: order
     password: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 server:
   port: 8081

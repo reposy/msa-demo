@@ -3,7 +3,7 @@ spring:
     name: product-service
   r2dbc:
     url: r2dbc:postgresql://postgres-product:5432/productdb
-    username: user
+    username: product
     password: secret
 
 server:

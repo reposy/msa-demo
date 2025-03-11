@@ -3,7 +3,7 @@ spring:
     name: order-service
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: r2dbc:postgresql://postgres-order:5432/orderdb
+    url: jdbc:postgresql://postgres-order:5432/orderdb
     username: order
     password: secret
   jpa:

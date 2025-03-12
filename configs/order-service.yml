@@ -1,15 +1,10 @@
 spring:
+  application:
+    name: order-service
   r2dbc:
     url: r2dbc:postgresql://postgres-order:5432/orderdb
     username: order
     password: secret
-
-r2dbc:
-  url: r2dbc:postgresql://postgres-order:5432/orderdb
-  username: order
-  password: secret
-
-url: r2dbc:postgresql://postgres-order:5432/orderdb
 
 server:
   port: 8081

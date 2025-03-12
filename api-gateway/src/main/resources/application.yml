@@ -5,3 +5,6 @@ spring:
     path: /graphql
     schema:
       locations: classpath:graphql/
+
+server:
+  port: 8084

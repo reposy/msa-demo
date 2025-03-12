@@ -5,23 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522ea350-c19c-4d2b-a617-bd704c94cce7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/OrderGraphQLController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/OrderQuery.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/OrderQuery.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/test/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderServiceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderServiceApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order-service/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/test/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/test/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/test/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -418,7 +407,7 @@
       <workItem from="1741572574832" duration="9982000" />
       <workItem from="1741582668956" duration="6383000" />
       <workItem from="1741603270632" duration="8478000" />
-      <workItem from="1741654952504" duration="20712000" />
+      <workItem from="1741654952504" duration="22813000" />
     </task>
     <servers />
   </component>

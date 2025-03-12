@@ -68,7 +68,7 @@ services:
       - SPRING_PROFILES_ACTIVE=default
       - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
 
-  graphql-api-gateway:
+  api-gateway:
     image: eclipse-temurin:21-jdk-alpine
     depends_on:
       config-service:
@@ -81,6 +81,9 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=default
       - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - USER_SERVICE_URL=http://user-service:8083
+      - ORDER_SERVICE_URL=http://order-service:8081
+      - PRODUCT_SERVICE_URL=http://product-service:8082
 
   postgres-user:
     image: postgres:15

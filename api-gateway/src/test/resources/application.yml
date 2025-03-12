@@ -5,3 +5,7 @@ spring:
     path: /graphql
     schema:
       locations: classpath:graphql/
+
+ORDER_SERVICE_URL: http://order-service:8081
+USER_SERVICE_URL: http://user-service:8083
+PRODUCT_SERVICE_URL: http://product-service:8082

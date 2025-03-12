@@ -1,4 +1,7 @@
 spring:
+  cloud:
+    config:
+      enabled: false
   r2dbc:
     url: r2dbc:h2:mem:///testdb;DB_CLOSE_DELAY=-1;
     username: sa

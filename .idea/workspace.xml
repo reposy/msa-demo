@@ -5,17 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522ea350-c19c-4d2b-a617-bd704c94cce7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Order.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/OrderQuery.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Product.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/User.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/graphql/schema.graphqls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/test/kotlin/msaspring/apigateway/GraphqlApiGatewayIntegrationTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/test/kotlin/msaspring/apigateway/OrderQueryTestConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderServiceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderServiceApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/test/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/test/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/test/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/test/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/resources/schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +118,7 @@
   "keyToString": {
     "Docker.dokcerRun.executor": "Run",
     "Gradle.Build config-service.executor": "Run",
+    "Gradle.Build order-service.executor": "Run",
     "Gradle.GraphqlApiGatewayIntegrationTest.executor": "Run",
     "Gradle.GraphqlApiGatewayTest.executor": "Run",
     "Gradle.GraphqlApiGatewayTest.test orders query.executor": "Run",
@@ -122,6 +129,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.ConfigApplication (1).executor": "Run",
+    "Spring Boot.OrderServiceApplication.executor": "Run",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
@@ -167,7 +175,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.GraphqlApiGatewayIntegrationTest">
+  <component name="RunManager" selected="Spring Boot.OrderServiceApplication">
     <configuration name="GraphqlApiGatewayIntegrationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -408,7 +416,9 @@
       <updated>1741564207530</updated>
       <workItem from="1741564208537" duration="6600000" />
       <workItem from="1741572574832" duration="9982000" />
-      <workItem from="1741582668956" duration="5434000" />
+      <workItem from="1741582668956" duration="6383000" />
+      <workItem from="1741603270632" duration="8478000" />
+      <workItem from="1741654952504" duration="20712000" />
     </task>
     <servers />
   </component>

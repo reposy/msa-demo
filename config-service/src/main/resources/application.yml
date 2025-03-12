@@ -8,6 +8,12 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/reposy/msa-demo/
+          uri: https://github.com/reposy/msa-demo
           searchPaths: configs
           default-label: master
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

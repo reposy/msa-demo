@@ -6,11 +6,17 @@ services:
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8888:8888"
-    environment:
-      - SPRING_PROFILES_ACTIVE=default
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8888/actuator/health"]
+      interval: 3s
+      timeout: 2s
+      retries: 5
 
   dashboard-service:
     image: eclipse-temurin:21-jdk-alpine
+    depends_on:
+      config-service:
+        condition: service_healthy
     volumes:
       - ./dashboard-service/build/libs/dashboard-service-0.0.1-SNAPSHOT.jar:/app/app.jar
     command: ["java", "-jar", "/app/app.jar"]
@@ -18,9 +24,13 @@ services:
       - "8080:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=default
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
 
-  :
+  order-service:
     image: eclipse-temurin:21-jdk-alpine
+    depends_on:
+      config-service:
+        condition: service_healthy
     volumes:
       - ./order-service/build/libs/order-service-0.0.1-SNAPSHOT.jar:/app/app.jar
     command: ["java", "-jar", "/app/app.jar"]
@@ -28,9 +38,13 @@ services:
       - "8081:8081"
     environment:
       - SPRING_PROFILES_ACTIVE=default
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
 
   product-service:
     image: eclipse-temurin:21-jdk-alpine
+    depends_on:
+      config-service:
+        condition: service_healthy
     volumes:
       - ./product-service/build/libs/product-service-0.0.1-SNAPSHOT.jar:/app/app.jar
     command: ["java", "-jar", "/app/app.jar"]
@@ -38,9 +52,13 @@ services:
       - "8082:8082"
     environment:
       - SPRING_PROFILES_ACTIVE=default
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
 
   user-service:
     image: eclipse-temurin:21-jdk-alpine
+    depends_on:
+      config-service:
+        condition: service_healthy
     volumes:
       - ./user-service/build/libs/user-service-0.0.1-SNAPSHOT.jar:/app/app.jar
     command: ["java", "-jar", "/app/app.jar"]
@@ -48,6 +66,21 @@ services:
       - "8083:8083"
     environment:
       - SPRING_PROFILES_ACTIVE=default
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+
+  graphql-api-gateway:
+    image: eclipse-temurin:21-jdk-alpine
+    depends_on:
+      config-service:
+        condition: service_healthy
+    volumes:
+      - ./api-gateway/build/libs/api-gateway-0.0.1-SNAPSHOT.jar:/app/app.jar
+    command: ["java", "-jar", "/app/app.jar"]
+    ports:
+      - "8084:8084"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
 
   postgres-user:
     image: postgres:15

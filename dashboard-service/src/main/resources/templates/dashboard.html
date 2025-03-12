@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>GraphQL Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">GraphQL Dashboard</h1>
+
+    <!-- 버튼: 데이터 생성 및 새로고침 -->
+    <div class="mb-6">
+        <button id="generateDataBtn" class="px-4 py-2 bg-blue-500 text-white rounded">
+            대량 랜덤 데이터 생성
+        </button>
+        <button id="refreshBtn" class="px-4 py-2 bg-green-500 text-white rounded ml-2">
+            새로고침
+        </button>
+    </div>
+
+    <!-- 데이터 요약 영역 -->
+    <div id="summary" class="mb-6">
+        <h2 class="text-2xl font-bold mb-2">데이터 요약</h2>
+        <ul class="list-disc pl-5">
+            <li>전체 사용자 수: <span id="userCount">0</span></li>
+            <li>전체 상품 수: <span id="productCount">0</span></li>
+            <li>전체 주문 수: <span id="orderCount">0</span></li>
+        </ul>
+    </div>
+
+    <!-- 최근 데이터 테이블 영역 -->
+    <div id="tables">
+        <h2 class="text-2xl font-bold mb-2">최근 데이터 (상위 10개)</h2>
+
+        <!-- Users 테이블 -->
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold">Users</h3>
+            <table class="min-w-full bg-white shadow rounded">
+                <thead>
+                <tr>
+                    <th class="py-2 px-4 border">ID</th>
+                    <th class="py-2 px-4 border">Name</th>
+                    <th class="py-2 px-4 border">Email</th>
+                </tr>
+                </thead>
+                <tbody id="usersTable">
+                <!-- 최근 사용자 10개 데이터가 여기에 렌더링됨 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Products 테이블 -->
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold">Products</h3>
+            <table class="min-w-full bg-white shadow rounded">
+                <thead>
+                <tr>
+                    <th class="py-2 px-4 border">ID</th>
+                    <th class="py-2 px-4 border">Name</th>
+                    <th class="py-2 px-4 border">Price</th>
+                    <th class="py-2 px-4 border">Stock</th>
+                </tr>
+                </thead>
+                <tbody id="productsTable">
+                <!-- 최근 상품 10개 데이터가 여기에 렌더링됨 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Orders 테이블 -->
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold">Orders</h3>
+            <table class="min-w-full bg-white shadow rounded">
+                <thead>
+                <tr>
+                    <th class="py-2 px-4 border">ID</th>
+                    <th class="py-2 px-4 border">User ID</th>
+                    <th class="py-2 px-4 border">Product ID</th>
+                    <th class="py-2 px-4 border">Quantity</th>
+                    <th class="py-2 px-4 border">Status</th>
+                </tr>
+                </thead>
+                <tbody id="ordersTable">
+                <!-- 최근 주문 10개 데이터가 여기에 렌더링됨 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,8 +1,10 @@
 package msaspring.userserver
 
+import org.springframework.data.domain.PageRequest
 import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import java.util.*
 
 
 @RestController
@@ -11,6 +13,26 @@ class UserController(private val userRepository: UserRepository) {
     // 모든 사용자 반환 (Flux)
     @GetMapping
     fun getAllUsers(): Flux<User> = userRepository.findAll()
+
+    @GetMapping("/recent")
+    fun getRecentUsers(@RequestParam count: Int): Flux<User> {
+        return userRepository.findAllByOrderByIdDesc(PageRequest.of(0, count))
+    }
+
+    @PostMapping("/generate")
+    fun generateUsers(@RequestParam count: Int): Flux<User> {
+        return Flux.range(1, count)
+            .map {
+                User(
+                    id = null,
+                    name = "User-${UUID.randomUUID()}",
+                    email = "${UUID.randomUUID()}@example.com"
+                )
+            }
+            .flatMap { userRepository.save(it) }
+    }
+
+
 
     // 새 사용자 생성 (Mono)
     @PostMapping

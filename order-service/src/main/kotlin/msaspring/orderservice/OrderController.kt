@@ -1,8 +1,10 @@
 package msaspring.orderservice
 
+import org.springframework.data.domain.PageRequest
 import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import java.util.*
 
 @RestController
 @RequestMapping("/orders")
@@ -11,6 +13,28 @@ class OrderController(private val orderRepository: OrderRepository) {
     // 모든 주문 조회 (Flux)
     @GetMapping
     fun getAllOrders(): Flux<Order> = orderRepository.findAll()
+
+    // 최근 생성된 주문 상위 'count'개 반환
+    @GetMapping("/recent")
+    fun getRecentOrders(@RequestParam count: Int): Flux<Order> {
+        return orderRepository.findAllByOrderByIdDesc(PageRequest.of(0, count))
+    }
+
+    @PostMapping("/generate")
+    fun generateOrders(@RequestParam count: Int): Flux<Order> {
+        val random = Random()
+        return Flux.range(1, count)
+            .map {
+                Order(
+                    id = null,
+                    userId = random.nextLong(1, 1000),  // 실제 존재 여부와 상관없이 랜덤 숫자 할당
+                    productId = random.nextLong(1, 1000),
+                    quantity = random.nextInt(1, 10),
+                    status = OrderStatus.NEW
+                )
+            }
+            .flatMap { orderRepository.save(it) }
+    }
 
     // 새로운 주문 생성 (Mono)
     @PostMapping

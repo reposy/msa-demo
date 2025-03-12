@@ -5,12 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522ea350-c19c-4d2b-a617-bd704c94cce7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/OrderGraphQLController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/GraphQLConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/GraphQLController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/GraphQLService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-service/src/main/kotlin/msaspring/msadashboard/DashboardController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-service/src/main/kotlin/msaspring/msadashboard/DashboardService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-service/src/main/resources/static/dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dashboard-service/src/main/resources/templates/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/OrderQuery.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/OrderQuery.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Order.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Order.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/OrderGraphQLController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/OrderQuery.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Query.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/graphql/schema.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/graphql/schema.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserRepository.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +87,8 @@
       <list>
         <option value="Dockerfile" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -105,6 +122,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "Docker.dokcerRun.executor": "Run",
     "Gradle.Build config-service.executor": "Run",
     "Gradle.Build order-service.executor": "Run",
@@ -153,6 +171,9 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api-gateway/src/main/resources/graphql" />
       <recent name="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/graphql" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="msaspring.apigateway.input" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -407,7 +428,7 @@
       <workItem from="1741572574832" duration="9982000" />
       <workItem from="1741582668956" duration="6383000" />
       <workItem from="1741603270632" duration="8478000" />
-      <workItem from="1741654952504" duration="22813000" />
+      <workItem from="1741654952504" duration="28918000" />
     </task>
     <servers />
   </component>

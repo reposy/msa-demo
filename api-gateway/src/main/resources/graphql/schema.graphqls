@@ -1,25 +1,38 @@
+scalar Long
+
 type Query {
+    users: [User]
+    recentUsers(count: Int!): [User]
+    products: [Product]
+    recentProducts(count: Int!): [Product]
     orders: [Order]
+    recentOrders(count: Int!): [Order]
 }
 
-type Order {
-    id: ID!
-    quantity: Int
-    status: String
-    user: User
-    product: Product
+type Mutation {
+    generateUsers(count: Int!): [User]
+    generateProducts(count: Int!): [Product]
+    generateOrders(count: Int!): [Order]
 }
 
 type User {
     id: ID!
-    name: String
-    email: String
+    name: String!
+    email: String!
 }
 
 type Product {
     id: ID!
-    name: String
+    name: String!
     description: String
-    price: Float
-    stock: Int
+    price: Float!
+    stock: Int!
+}
+
+type Order {
+    id: ID!
+    userId: Long!
+    productId: Long!
+    quantity: Int!
+    status: String!
 }

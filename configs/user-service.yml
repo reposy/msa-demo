@@ -7,6 +7,10 @@ spring:
     password: secret
     initialize: true
     initialization-mode: always
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
 
 server:
   port: 8083

@@ -7,6 +7,14 @@ spring:
     password: secret
     initialize: true
     initialization-mode: always
+  datasource:
+    url: jdbc:postgresql://postgres-product:5432/productdb
+    username: product
+    password: secret
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
 
 server:
   port: 8082

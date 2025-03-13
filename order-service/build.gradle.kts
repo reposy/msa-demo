@@ -21,7 +21,7 @@ repositories {
 dependencies {
     implementation ("org.springframework.boot:spring-boot-starter-jdbc")
     implementation ("org.postgresql:postgresql")
-    implementation ("org.flywaydb:flyway-core")
+    implementation("org.flywaydb:flyway-core:11.4.0")
 
     implementation("org.springframework.cloud:spring-cloud-starter-config:4.2.0")
 

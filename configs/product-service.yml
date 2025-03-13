@@ -6,7 +6,7 @@ spring:
     username: product
     password: secret
     initialize: true
-    initialize-mode: true
+    initialization-mode: true
 
 server:
   port: 8082

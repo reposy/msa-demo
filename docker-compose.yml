@@ -86,7 +86,7 @@ services:
       - PRODUCT_SERVICE_URL=http://product-service:8082
 
   postgres-user:
-    image: postgres:15
+    image: postgres:17.4
     container_name: postgres-user
     environment:
       POSTGRES_DB: userdb
@@ -98,7 +98,7 @@ services:
       - "5433:5432"
 
   postgres-product:
-    image: postgres:15
+    image: postgres:17.4
     container_name: postgres-product
     environment:
       POSTGRES_DB: productdb
@@ -110,7 +110,7 @@ services:
       - "5434:5432"
 
   postgres-order:
-    image: postgres:15
+    image: postgres:17.4
     container_name: postgres-order
     environment:
       POSTGRES_DB: orderdb

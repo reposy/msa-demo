@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const refreshBtn = document.getElementById('refreshBtn');
 
     generateDataBtn.addEventListener('click', function() {
-        generateData().then(() => {
+        const generateCount = parseInt(document.getElementById('generateCount').value, 10) || 10;
+        generateData(generateCount).then(() => {
             refreshData();
         });
     });
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // GraphQL API 호출 공통 함수
 function callGraphQL(query, variables = {}) {
-    return fetch('/graphql', {
+    return fetch('http://localhost:8084/graphql', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query, variables })
@@ -26,7 +27,7 @@ function callGraphQL(query, variables = {}) {
 }
 
 // 대량 랜덤 데이터 생성 Mutation 호출
-function generateData() {
+function generateData(count) {
     const mutation = `
     mutation GenerateData($count: Int!) {
       generateUsers(count: $count) {
@@ -50,14 +51,14 @@ function generateData() {
       }
     }
   `;
-    // 예시로 각 서비스에 10개씩 생성
-    return callGraphQL(mutation, { count: 10 }).then(data => {
+    return callGraphQL(mutation, { count }).then(data => {
         console.log('Data generated:', data);
     }).catch(err => console.error('Error generating data:', err));
 }
 
 // 전체 데이터 및 최근 데이터 조회 Query 호출
 function refreshData() {
+    const recentCount = parseInt(document.getElementById('recentCount').value, 10) || 10;
     const query = `
     query GetData($recentCount: Int!) {
       users { id }
@@ -83,8 +84,7 @@ function refreshData() {
       }
     }
   `;
-    const variables = { recentCount: 10 };
-    callGraphQL(query, variables).then(data => {
+    callGraphQL(query, { recentCount }).then(data => {
         if (data.data) {
             updateSummary(data.data);
             updateTables(data.data);

@@ -9,12 +9,20 @@
 <div class="container mx-auto p-6">
     <h1 class="text-3xl font-bold mb-6">GraphQL Dashboard</h1>
 
-    <!-- 버튼: 데이터 생성 및 새로고침 -->
+    <!-- 데이터 생성 영역 -->
     <div class="mb-6">
-        <button id="generateDataBtn" class="px-4 py-2 bg-blue-500 text-white rounded">
+        <label for="generateCount" class="mr-2 font-medium">생성 개수:</label>
+        <input id="generateCount" type="number" value="10" class="border p-1 w-20" min="1" />
+        <button id="generateDataBtn" class="px-4 py-2 bg-blue-500 text-white rounded ml-4">
             대량 랜덤 데이터 생성
         </button>
-        <button id="refreshBtn" class="px-4 py-2 bg-green-500 text-white rounded ml-2">
+    </div>
+
+    <!-- 최근 데이터 조회 영역 -->
+    <div class="mb-6">
+        <label for="recentCount" class="mr-2 font-medium">최근 데이터 개수:</label>
+        <input id="recentCount" type="number" value="10" class="border p-1 w-20" min="1" />
+        <button id="refreshBtn" class="px-4 py-2 bg-green-500 text-white rounded ml-4">
             새로고침
         </button>
     </div>
@@ -31,7 +39,7 @@
 
     <!-- 최근 데이터 테이블 영역 -->
     <div id="tables">
-        <h2 class="text-2xl font-bold mb-2">최근 데이터 (상위 10개)</h2>
+        <h2 class="text-2xl font-bold mb-2">최근 데이터 (상위 입력 개수)</h2>
 
         <!-- Users 테이블 -->
         <div class="mb-4">
@@ -45,7 +53,7 @@
                 </tr>
                 </thead>
                 <tbody id="usersTable">
-                <!-- 최근 사용자 10개 데이터가 여기에 렌더링됨 -->
+                <!-- 최근 사용자 데이터가 여기에 렌더링됨 -->
                 </tbody>
             </table>
         </div>
@@ -63,7 +71,7 @@
                 </tr>
                 </thead>
                 <tbody id="productsTable">
-                <!-- 최근 상품 10개 데이터가 여기에 렌더링됨 -->
+                <!-- 최근 상품 데이터가 여기에 렌더링됨 -->
                 </tbody>
             </table>
         </div>
@@ -82,7 +90,7 @@
                 </tr>
                 </thead>
                 <tbody id="ordersTable">
-                <!-- 최근 주문 10개 데이터가 여기에 렌더링됨 -->
+                <!-- 최근 주문 데이터가 여기에 렌더링됨 -->
                 </tbody>
             </table>
         </div>

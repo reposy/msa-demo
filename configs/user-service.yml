@@ -6,7 +6,7 @@ spring:
     username: user
     password: secret
     initialize: true
-    initialization-mode: true
+    initialization-mode: always
 
 server:
   port: 8083

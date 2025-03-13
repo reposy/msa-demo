@@ -5,6 +5,7 @@ spring:
     url: r2dbc:postgresql://postgres-product:5432/productdb
     username: product
     password: secret
+    initialize: true
 
 server:
   port: 8082

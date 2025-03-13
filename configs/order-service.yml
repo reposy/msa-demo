@@ -5,6 +5,7 @@ spring:
     url: r2dbc:postgresql://postgres-order:5432/orderdb
     username: order
     password: secret
+    initialize: true
 
 server:
   port: 8081

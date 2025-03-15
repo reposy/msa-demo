@@ -1,6 +1,8 @@
 spring:
   application:
     name: api-gateway
+  config:
+    import: "configserver:${SPRING_CLOUD_CONFIG_URI}"
   graphql:
     path: /graphql
     schema:

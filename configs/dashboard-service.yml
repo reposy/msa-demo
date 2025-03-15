@@ -10,3 +10,8 @@ management:
     export:
       prometheus:
         enabled: true
+  observations:
+    http:
+      server:
+        requests:
+          enabled: true  # HTTP 요청 메트릭 활성화

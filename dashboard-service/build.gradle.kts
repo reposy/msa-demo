@@ -21,6 +21,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("io.micrometer:micrometer-registry-prometheus")
+    implementation("org.springframework.cloud:spring-cloud-starter-config:4.2.0")
 
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")

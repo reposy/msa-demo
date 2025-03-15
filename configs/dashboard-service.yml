@@ -14,4 +14,4 @@ management:
     http:
       server:
         requests:
-          enabled: true  # HTTP 요청 메트릭 활성화
+          enabled: true  # http request

@@ -1,0 +1,12 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+      - "/var/log/app/*.log"  # 모든 서비스의 로그를 모니터링
+    fields:
+      log_type: application
+    fields_under_root: true
+    multiline.pattern: '^\d{4}-\d{2}-\d{2}'  # 로그 패턴에 맞게 설정
+
+output.logstash:
+  hosts: ["logstash:5044"]

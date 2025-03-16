@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522ea350-c19c-4d2b-a617-bd704c94cce7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/dashboard-service/src/test/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filebeat.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/logstash/pipeline/logstash.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/test/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/test/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/api-gateway.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/api-gateway.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/dashboard-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/dashboard-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dashboard-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -415,7 +413,7 @@
       <workItem from="1741572574832" duration="9982000" />
       <workItem from="1741582668956" duration="6383000" />
       <workItem from="1741603270632" duration="8478000" />
-      <workItem from="1741654952504" duration="44268000" />
+      <workItem from="1741654952504" duration="48946000" />
     </task>
     <servers />
   </component>

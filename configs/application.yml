@@ -1,5 +1,6 @@
 logging:
   file:
-    path: /var/log/app  # 모든 서비스가 동일한 디렉터리에 로그 저장
+    path: /var/log/app
+    name: ${spring.application.name}.log  # 서비스 이름별로 로그 파일 생성
   level:
     root: INFO

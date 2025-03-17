@@ -190,3 +190,4 @@ volumes:
   postgres-product-data:
   postgres-order-data:
   grafana-data:
+  elasticsearch-data:

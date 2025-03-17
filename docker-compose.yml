@@ -3,6 +3,7 @@ services:
     image: eclipse-temurin:21-jdk-alpine
     volumes:
       - ./config-service/build/libs/config-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+      - log-data:/var/log/app
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8888:8888"
@@ -19,6 +20,7 @@ services:
         condition: service_healthy
     volumes:
       - ./dashboard-service/build/libs/dashboard-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+      - log-data:/var/log/app
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8080:8080"
@@ -33,6 +35,7 @@ services:
         condition: service_healthy
     volumes:
       - ./order-service/build/libs/order-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+      - log-data:/var/log/app
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8081:8081"
@@ -47,6 +50,7 @@ services:
         condition: service_healthy
     volumes:
       - ./product-service/build/libs/product-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+      - log-data:/var/log/app
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8082:8082"
@@ -61,6 +65,7 @@ services:
         condition: service_healthy
     volumes:
       - ./user-service/build/libs/user-service-0.0.1-SNAPSHOT.jar:/app/app.jar
+      - log-data:/var/log/app
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8083:8083"
@@ -75,6 +80,7 @@ services:
         condition: service_healthy
     volumes:
       - ./api-gateway/build/libs/api-gateway-0.0.1-SNAPSHOT.jar:/app/app.jar
+      - log-data:/var/log/app
     command: ["java", "-jar", "/app/app.jar"]
     ports:
       - "8084:8084"
@@ -143,6 +149,7 @@ services:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     volumes:
       - grafana-data:/var/lib/grafana
+
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.5.0
     container_name: elasticsearch
@@ -174,20 +181,28 @@ services:
       - "5601:5601"
     depends_on:
       - elasticsearch
+    volumes:
+      - kibana-data:/usr/share/kibana/data
+
   filebeat:
     image: docker.elastic.co/beats/filebeat:8.5.0
     container_name: filebeat
     user: root
     volumes:
       - ./filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
-      - /var/log/app:/var/log/app:ro # 애플리케이션 로그 파일 경로
+      - log-data:/var/log/app:ro # 애플리케이션 로그 파일 경로
     depends_on:
       - logstash
     command: [ "filebeat", "-e", "-strict.perms=false" ]
 
 volumes:
+  log-data:
+    driver: local
   postgres-user-data:
   postgres-product-data:
   postgres-order-data:
   grafana-data:
   elasticsearch-data:
+    driver: local
+  kibana-data:
+    driver: local

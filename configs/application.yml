@@ -2,4 +2,4 @@ logging:
   file:
     name: /var/log/app/${spring.application.name}.log  # 서비스 이름별로 로그 파일 생성
   level:
-    root: DEBUG
+    root: INFO

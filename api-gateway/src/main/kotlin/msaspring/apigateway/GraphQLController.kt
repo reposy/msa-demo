@@ -38,4 +38,22 @@ class GraphQLController(private val service: GraphQLService) {
 
     @MutationMapping
     fun generateOrders(@Argument count: Int): Flux<Order> = service.generateOrders(count)
+
+    @QueryMapping
+    fun usersKafka(): Flux<User> = service.getUsersKafka()
+
+    @QueryMapping
+    fun recentUsersKafka(@Argument count: Int): Flux<User> = service.getRecentUsersKafka(count)
+
+    @QueryMapping
+    fun productsKafka(): Flux<Product> = service.getProductsKafka()
+
+    @QueryMapping
+    fun recentProductsKafka(@Argument count: Int): Flux<Product> = service.getRecentProductsKafka(count)
+
+    @QueryMapping
+    fun ordersKafka(): Flux<Order> = service.getOrdersKafka()
+
+    @QueryMapping
+    fun recentOrdersKafka(@Argument count: Int): Flux<Order> = service.getRecentOrdersKafka(count)
 }

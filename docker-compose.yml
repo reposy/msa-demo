@@ -13,6 +13,26 @@ services:
       timeout: 2s
       retries: 5
 
+  kafka:
+    image: bitnami/kafka:latest
+    container_name: kafka
+    ports:
+      - "9092:9092"    # 클라이언트 통신용
+      - "9093:9093"    # 컨트롤러 통신용
+    environment:
+      - KAFKA_CFG_PROCESS_ROLES=broker,controller
+      - KAFKA_CFG_NODE_ID=1
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka:9093
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    healthcheck:
+      test: [ "CMD", "bash", "-c", "kafka-broker-api-versions.sh --bootstrap-server localhost:9092" ]
+      interval: 3s
+      timeout: 2s
+      retries: 5
+
   dashboard-service:
     image: eclipse-temurin:21-jdk-alpine
     depends_on:
@@ -33,6 +53,8 @@ services:
     depends_on:
       config-service:
         condition: service_healthy
+      kafka:
+        condition: service_healthy
     volumes:
       - ./order-service/build/libs/order-service-0.0.1-SNAPSHOT.jar:/app/app.jar
       - log-data:/var/log/app
@@ -42,11 +64,14 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=default
       - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
 
   product-service:
     image: eclipse-temurin:21-jdk-alpine
     depends_on:
       config-service:
+        condition: service_healthy
+      kafka:
         condition: service_healthy
     volumes:
       - ./product-service/build/libs/product-service-0.0.1-SNAPSHOT.jar:/app/app.jar
@@ -57,11 +82,14 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=default
       - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
 
   user-service:
     image: eclipse-temurin:21-jdk-alpine
     depends_on:
       config-service:
+        condition: service_healthy
+      kafka:
         condition: service_healthy
     volumes:
       - ./user-service/build/libs/user-service-0.0.1-SNAPSHOT.jar:/app/app.jar
@@ -72,11 +100,14 @@ services:
     environment:
       - SPRING_PROFILES_ACTIVE=default
       - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
 
   api-gateway:
     image: eclipse-temurin:21-jdk-alpine
     depends_on:
       config-service:
+        condition: service_healthy
+      kafka:
         condition: service_healthy
     volumes:
       - ./api-gateway/build/libs/api-gateway-0.0.1-SNAPSHOT.jar:/app/app.jar
@@ -90,6 +121,7 @@ services:
       - USER_SERVICE_URL=http://user-service:8083
       - ORDER_SERVICE_URL=http://order-service:8081
       - PRODUCT_SERVICE_URL=http://product-service:8082
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
 
   postgres-user:
     image: postgres:17.4

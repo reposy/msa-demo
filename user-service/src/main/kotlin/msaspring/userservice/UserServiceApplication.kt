@@ -1,4 +1,4 @@
-package msaspring.userserver
+package msaspring.userservice
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

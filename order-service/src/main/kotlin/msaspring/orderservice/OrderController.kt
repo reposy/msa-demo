@@ -8,7 +8,10 @@ import java.util.*
 
 @RestController
 @RequestMapping("/orders")
-class OrderController(private val orderRepository: OrderRepository) {
+class OrderController(
+    private val orderRepository: OrderRepository,
+    private val kafkaOrderQueryService: KafkaOrderQueryService
+) {
 
     // 모든 주문 조회 (Flux)
     @GetMapping
@@ -63,4 +66,16 @@ class OrderController(private val orderRepository: OrderRepository) {
     // 주문 삭제 (Mono<Void>)
     @DeleteMapping("/{id}")
     fun deleteOrder(@PathVariable id: Long): Mono<Void> = orderRepository.deleteById(id)
+
+    // --- Kafka 요청–응답 엔드포인트 ---
+
+    // 주문 ID로 조회하는 Kafka 엔드포인트
+    @GetMapping("/kafka/{id}")
+    fun getOrderByIdKafka(@PathVariable id: Long): Mono<Order> =
+        kafkaOrderQueryService.queryOrderById(id)
+
+    // 최근 주문 10개(또는 count 개)를 조회하는 Kafka 엔드포인트
+    @GetMapping("/kafka/recent")
+    fun getRecentOrdersKafka(@RequestParam(required = false, defaultValue = "10") count: Int): Mono<List<Order>> =
+        kafkaOrderQueryService.queryRecentOrders(count)
 }

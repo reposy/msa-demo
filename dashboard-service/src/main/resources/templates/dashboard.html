@@ -23,7 +23,10 @@
         <label for="recentCount" class="mr-2 font-medium">최근 데이터 개수:</label>
         <input id="recentCount" type="number" value="10" class="border p-1 w-20" min="1" />
         <button id="refreshBtn" class="px-4 py-2 bg-green-500 text-white rounded ml-4">
-            새로고침
+            새로고침 (REST+Kafka)
+        </button>
+        <button id="refreshKafkaBtn" class="px-4 py-2 bg-purple-500 text-white rounded ml-4">
+            Kafka 새로고침
         </button>
     </div>
 
@@ -37,9 +40,9 @@
         </ul>
     </div>
 
-    <!-- 최근 데이터 테이블 영역 -->
-    <div id="tables">
-        <h2 class="text-2xl font-bold mb-2">최근 데이터 (상위 입력 개수)</h2>
+    <!-- REST 기반 데이터 테이블 영역 -->
+    <div id="tables" class="mb-10">
+        <h2 class="text-2xl font-bold mb-2">REST 기반 데이터 (상위 입력 개수)</h2>
 
         <!-- Users 테이블 -->
         <div class="mb-4">
@@ -53,7 +56,7 @@
                 </tr>
                 </thead>
                 <tbody id="usersTable">
-                <!-- 최근 사용자 데이터가 여기에 렌더링됨 -->
+                <!-- REST 사용자 데이터 렌더링 -->
                 </tbody>
             </table>
         </div>
@@ -71,7 +74,7 @@
                 </tr>
                 </thead>
                 <tbody id="productsTable">
-                <!-- 최근 상품 데이터가 여기에 렌더링됨 -->
+                <!-- REST 상품 데이터 렌더링 -->
                 </tbody>
             </table>
         </div>
@@ -90,7 +93,66 @@
                 </tr>
                 </thead>
                 <tbody id="ordersTable">
-                <!-- 최근 주문 데이터가 여기에 렌더링됨 -->
+                <!-- REST 주문 데이터 렌더링 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Kafka 기반 데이터 테이블 영역 -->
+    <div id="kafkaTables">
+        <h2 class="text-2xl font-bold mb-2">Kafka 기반 데이터 (상위 입력 개수)</h2>
+
+        <!-- Kafka Users 테이블 -->
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold">Kafka Users</h3>
+            <table class="min-w-full bg-white shadow rounded">
+                <thead>
+                <tr>
+                    <th class="py-2 px-4 border">ID</th>
+                    <th class="py-2 px-4 border">Name</th>
+                    <th class="py-2 px-4 border">Email</th>
+                </tr>
+                </thead>
+                <tbody id="kafkaUsersTable">
+                <!-- Kafka 사용자 데이터 렌더링 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Kafka Products 테이블 -->
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold">Kafka Products</h3>
+            <table class="min-w-full bg-white shadow rounded">
+                <thead>
+                <tr>
+                    <th class="py-2 px-4 border">ID</th>
+                    <th class="py-2 px-4 border">Name</th>
+                    <th class="py-2 px-4 border">Price</th>
+                    <th class="py-2 px-4 border">Stock</th>
+                </tr>
+                </thead>
+                <tbody id="kafkaProductsTable">
+                <!-- Kafka 상품 데이터 렌더링 -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Kafka Orders 테이블 -->
+        <div class="mb-4">
+            <h3 class="text-xl font-semibold">Kafka Orders</h3>
+            <table class="min-w-full bg-white shadow rounded">
+                <thead>
+                <tr>
+                    <th class="py-2 px-4 border">ID</th>
+                    <th class="py-2 px-4 border">User ID</th>
+                    <th class="py-2 px-4 border">Product ID</th>
+                    <th class="py-2 px-4 border">Quantity</th>
+                    <th class="py-2 px-4 border">Status</th>
+                </tr>
+                </thead>
+                <tbody id="kafkaOrdersTable">
+                <!-- Kafka 주문 데이터 렌더링 -->
                 </tbody>
             </table>
         </div>

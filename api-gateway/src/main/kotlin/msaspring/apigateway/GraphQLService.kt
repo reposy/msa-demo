@@ -1,6 +1,7 @@
 package msaspring.apigateway
 
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.core.ParameterizedTypeReference
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Flux
@@ -69,4 +70,48 @@ class GraphQLService(
         .uri("$orderServiceUrl/orders/generate?count={count}", count)
         .retrieve()
         .bodyToFlux(Order::class.java)
+
+    // --- Kafka 기반 조회 메서드 추가 ---
+    // Kafka 기반으로 전체 사용자(최근 데이터)를 조회하는 메서드
+    fun getUsersKafka(): Flux<User> = webClientBuilder.build()
+        .get()
+        .uri("$userServiceUrl/users/kafka/recent?count=1000")
+        .retrieve()
+        .bodyToMono(object : ParameterizedTypeReference<List<User>>() {})
+        .flatMapMany { Flux.fromIterable(it) }
+
+    fun getProductsKafka(): Flux<Product> = webClientBuilder.build()
+        .get()
+        .uri("$productServiceUrl/products/kafka/recent?count=1000")
+        .retrieve()
+        .bodyToMono(object : ParameterizedTypeReference<List<Product>>() {})
+        .flatMapMany { Flux.fromIterable(it) }
+
+    fun getOrdersKafka(): Flux<Order> = webClientBuilder.build()
+        .get()
+        .uri("$orderServiceUrl/orders/kafka/recent?count=1000")
+        .retrieve()
+        .bodyToMono(object : ParameterizedTypeReference<List<Order>>() {})
+        .flatMapMany { Flux.fromIterable(it) }
+
+    fun getRecentUsersKafka(count: Int): Flux<User> = webClientBuilder.build()
+        .get()
+        .uri("$userServiceUrl/users/kafka/recent?count={count}", count)
+        .retrieve()
+        .bodyToMono(object : ParameterizedTypeReference<List<User>>() {})
+        .flatMapMany { Flux.fromIterable(it) }
+
+    fun getRecentProductsKafka(count: Int): Flux<Product> = webClientBuilder.build()
+        .get()
+        .uri("$productServiceUrl/products/kafka/recent?count={count}", count)
+        .retrieve()
+        .bodyToMono(object : ParameterizedTypeReference<List<Product>>() {})
+        .flatMapMany { Flux.fromIterable(it) }
+
+    fun getRecentOrdersKafka(count: Int): Flux<Order> = webClientBuilder.build()
+        .get()
+        .uri("$orderServiceUrl/orders/kafka/recent?count={count}", count)
+        .retrieve()
+        .bodyToMono(object : ParameterizedTypeReference<List<Order>>() {})
+        .flatMapMany { Flux.fromIterable(it) }
 }

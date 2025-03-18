@@ -1,20 +1,28 @@
 document.addEventListener('DOMContentLoaded', function() {
     const generateDataBtn = document.getElementById('generateDataBtn');
     const refreshBtn = document.getElementById('refreshBtn');
+    const refreshKafkaBtn = document.getElementById('refreshKafkaBtn'); // Kafka 새로고침 버튼
 
     generateDataBtn.addEventListener('click', function() {
         const generateCount = parseInt(document.getElementById('generateCount').value, 10) || 10;
         generateData(generateCount).then(() => {
             refreshData();
+            refreshKafkaData();
         });
     });
 
     refreshBtn.addEventListener('click', function() {
         refreshData();
+        refreshKafkaData();
+    });
+
+    refreshKafkaBtn.addEventListener('click', function() {
+        refreshKafkaData();
     });
 
     // 초기 데이터 로드
     refreshData();
+    refreshKafkaData();
 });
 
 // GraphQL API 호출 공통 함수
@@ -56,7 +64,7 @@ function generateData(count) {
     }).catch(err => console.error('Error generating data:', err));
 }
 
-// 전체 데이터 및 최근 데이터 조회 Query 호출
+// 전체 데이터 및 최근 데이터 조회 Query 호출 (REST 방식)
 function refreshData() {
     const recentCount = parseInt(document.getElementById('recentCount').value, 10) || 10;
     const query = `
@@ -102,7 +110,7 @@ function updateSummary(data) {
     document.getElementById('orderCount').textContent = orderCount;
 }
 
-// 업데이트: 테이블에 최근 데이터 렌더링
+// 업데이트: REST 방식 데이터 테이블 렌더링
 function updateTables(data) {
     // Users 테이블 업데이트
     const usersTable = document.getElementById('usersTable');
@@ -143,6 +151,84 @@ function updateTables(data) {
                       <td class="py-2 px-4 border">${order.quantity}</td>
                       <td class="py-2 px-4 border">${order.status}</td>`;
             ordersTable.appendChild(tr);
+        });
+    }
+}
+
+// --- Kafka 기반 데이터 조회 함수들 ---
+function refreshKafkaData() {
+    const recentCount = parseInt(document.getElementById('recentCount').value, 10) || 10;
+    const kafkaQuery = `
+    query GetKafkaData($recentCount: Int!) {
+      recentUsersKafka(count: $recentCount) {
+        id
+        name
+        email
+      }
+      recentProductsKafka(count: $recentCount) {
+        id
+        name
+        price
+        stock
+      }
+      recentOrdersKafka(count: $recentCount) {
+        id
+        userId
+        productId
+        quantity
+        status
+      }
+    }
+  `;
+    callGraphQL(kafkaQuery, { recentCount })
+        .then(data => {
+            if (data.data) {
+                updateKafkaTables(data.data);
+            }
+        })
+        .catch(err => console.error('Error refreshing Kafka data:', err));
+}
+
+function updateKafkaTables(data) {
+    // Kafka Users 테이블 업데이트
+    const kafkaUsersTable = document.getElementById('kafkaUsersTable');
+    kafkaUsersTable.innerHTML = '';
+    if (data.recentUsersKafka) {
+        data.recentUsersKafka.forEach(user => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td class="py-2 px-4 border">${user.id}</td>
+                      <td class="py-2 px-4 border">${user.name}</td>
+                      <td class="py-2 px-4 border">${user.email}</td>`;
+            kafkaUsersTable.appendChild(tr);
+        });
+    }
+
+    // Kafka Products 테이블 업데이트
+    const kafkaProductsTable = document.getElementById('kafkaProductsTable');
+    kafkaProductsTable.innerHTML = '';
+    if (data.recentProductsKafka) {
+        data.recentProductsKafka.forEach(product => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td class="py-2 px-4 border">${product.id}</td>
+                      <td class="py-2 px-4 border">${product.name}</td>
+                      <td class="py-2 px-4 border">${product.price}</td>
+                      <td class="py-2 px-4 border">${product.stock}</td>`;
+            kafkaProductsTable.appendChild(tr);
+        });
+    }
+
+    // Kafka Orders 테이블 업데이트
+    const kafkaOrdersTable = document.getElementById('kafkaOrdersTable');
+    kafkaOrdersTable.innerHTML = '';
+    if (data.recentOrdersKafka) {
+        data.recentOrdersKafka.forEach(order => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td class="py-2 px-4 border">${order.id}</td>
+                      <td class="py-2 px-4 border">${order.userId}</td>
+                      <td class="py-2 px-4 border">${order.productId}</td>
+                      <td class="py-2 px-4 border">${order.quantity}</td>
+                      <td class="py-2 px-4 border">${order.status}</td>`;
+            kafkaOrdersTable.appendChild(tr);
         });
     }
 }

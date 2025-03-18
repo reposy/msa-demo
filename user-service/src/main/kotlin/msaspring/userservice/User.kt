@@ -1,4 +1,4 @@
-package msaspring.userserver
+package msaspring.userservice
 
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Table

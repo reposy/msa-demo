@@ -19,6 +19,9 @@ repositories {
 }
 
 dependencies {
+    implementation ("org.springframework.kafka:spring-kafka")
+    implementation("io.projectreactor.kafka:reactor-kafka:1.3.23")
+
     implementation ("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.postgresql:postgresql:42.7.5")
     runtimeOnly("org.flywaydb:flyway-database-postgresql:11.4.0")

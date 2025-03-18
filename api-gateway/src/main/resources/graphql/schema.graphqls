@@ -3,10 +3,18 @@ scalar Long
 type Query {
     users: [User]
     recentUsers(count: Int!): [User]
+    usersKafka: [User]
+    recentUsersKafka(count: Int!): [User]
+
     products: [Product]
     recentProducts(count: Int!): [Product]
+    productsKafka: [Product]
+    recentProductsKafka(count: Int!): [Product]
+
     orders: [Order]
     recentOrders(count: Int!): [Order]
+    ordersKafka: [Order]
+    recentOrdersKafka(count: Int!): [Order]
 }
 
 type Mutation {

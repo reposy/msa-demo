@@ -1,4 +1,4 @@
-package msaspring.userserver
+package msaspring.userservice
 
 import org.springframework.data.domain.PageRequest
 import org.springframework.web.bind.annotation.*
@@ -9,7 +9,10 @@ import java.util.*
 
 @RestController
 @RequestMapping("/users")
-class UserController(private val userRepository: UserRepository) {
+class UserController(
+    private val userRepository: UserRepository,
+    private val kafkaUserQueryService: KafkaUserQueryService
+) {
     // 모든 사용자 반환 (Flux)
     @GetMapping
     fun getAllUsers(): Flux<User> = userRepository.findAll()
@@ -59,5 +62,17 @@ class UserController(private val userRepository: UserRepository) {
     // 사용자 삭제 (Mono<Void>)
     @DeleteMapping("/{id}")
     fun deleteUser(@PathVariable id: Long): Mono<Void> = userRepository.deleteById(id)
+
+    // --- Kafka 요청–응답 엔드포인트 ---
+
+    // 사용자 ID로 조회하는 Kafka 엔드포인트
+    @GetMapping("/kafka/{id}")
+    fun getUserByIdKafka(@PathVariable id: Long): Mono<User> =
+        kafkaUserQueryService.queryUserById(id)
+
+    // 최근 사용자 목록(기본 10개)을 조회하는 Kafka 엔드포인트
+    @GetMapping("/kafka/recent")
+    fun getRecentUsersKafka(@RequestParam(required = false, defaultValue = "10") count: Int): Mono<List<User>> =
+        kafkaUserQueryService.queryRecentUsers(count)
 
 }

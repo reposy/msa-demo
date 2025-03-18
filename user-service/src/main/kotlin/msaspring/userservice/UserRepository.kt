@@ -1,4 +1,4 @@
-package msaspring.userserver
+package msaspring.userservice
 
 import org.springframework.data.domain.Pageable
 import org.springframework.data.repository.reactive.ReactiveCrudRepository

@@ -1,4 +1,4 @@
-package msaspring.userserver
+package msaspring.userservice
 
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test

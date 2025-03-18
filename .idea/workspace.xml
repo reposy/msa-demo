@@ -5,8 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522ea350-c19c-4d2b-a617-bd704c94cce7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/KafkaOrderQueryReceiverConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/KafkaOrderQueryService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/KafkaProducerConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderQueryRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderQueryResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/ReactorKafkaSenderConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/KafkaProducerConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/KafkaProductQueryReceiverConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/KafkaProductQueryService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductQueryRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductQueryResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ReactorKafkaSenderConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/KafkaProducerConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/KafkaUserQueryReceiverConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/KafkaUserQueryService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/ReactorKafkaSenderConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/UserQueryRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/UserQueryResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/GraphQLController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/GraphQLController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/GraphQLService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/GraphQLService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Order.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Order.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Query.kt" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/kotlin/msaspring/apigateway/Query.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/graphql/schema.graphqls" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/graphql/schema.graphqls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-service/src/main/resources/static/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-service/src/main/resources/static/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dashboard-service/src/main/resources/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard-service/src/main/resources/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/kotlin/msaspring/orderservice/OrderController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/kotlin/msaspring/productservice/ProductController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/UserController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/UserRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userserver/UserServiceApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/kotlin/msaspring/userservice/UserServiceApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/kotlin/msaspring/userserver/UserControllerIntegrationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/kotlin/msaspring/userservice/UserControllerIntegrationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/test/kotlin/msaspring/userserver/UserServiceApplicationTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/test/kotlin/msaspring/userservice/UserServiceApplicationTests.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,46 +137,46 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Docker.dokcerRun.executor": "Run",
-    "Gradle.Build config-service.executor": "Run",
-    "Gradle.Build order-service.executor": "Run",
-    "Gradle.GraphqlApiGatewayIntegrationTest.executor": "Run",
-    "Gradle.GraphqlApiGatewayTest.executor": "Run",
-    "Gradle.GraphqlApiGatewayTest.test orders query.executor": "Run",
-    "Gradle.OrderControllerIntegrationTest.executor": "Run",
-    "Gradle.OrderServiceApplicationTests.contextLoads.executor": "Run",
-    "Gradle.testGradle.executor": "Run",
-    "Kotlin.ConfigApplicationKt.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.ConfigApplication (1).executor": "Run",
-    "Spring Boot.OrderServiceApplication.executor": "Run",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/hsykys0728/sypg/msa-demo/msa-demo/order-service/src/main/resources/db/migration",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Docker.dokcerRun.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build config-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build order-service.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GraphqlApiGatewayIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GraphqlApiGatewayTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GraphqlApiGatewayTest.test orders query.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OrderControllerIntegrationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OrderServiceApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.testGradle.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ConfigApplicationKt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ConfigApplication (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrderServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/hsykys0728/sypg/msa-demo/msa-demo/order-service/src/main/resources/db/migration&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "kotlin-gradle-user-dirs": [
-      "/Users/hsykys0728/.gradle"
+  &quot;keyToStringList&quot;: {
+    &quot;kotlin-gradle-user-dirs&quot;: [
+      &quot;/Users/hsykys0728/.gradle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/order-service/src/main/resources/db/migration" />
@@ -156,6 +192,9 @@
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="msaspring.apigateway.input" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="msaspring.productservice" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -346,9 +385,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="UserServiceApplicationKt" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="msa-demo.user-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="msaspring.userservice.UserServiceApplicationKt" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplicationKt" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="user-service.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="msaspring.userserver.UserServerApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="msaspring.userservice.UserServiceApplicationKt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -379,8 +425,7 @@
       <item itemvalue="Spring Boot.OrderServiceApplication (1)" />
       <item itemvalue="Spring Boot.ProductServiceApplication" />
       <item itemvalue="Spring Boot.ProductServiceApplication (1)" />
-      <item itemvalue="Spring Boot.UserServerApplication" />
-      <item itemvalue="Spring Boot.UserServerApplication (1)" />
+      <item itemvalue="Spring Boot.UserServiceApplicationKt" />
     </list>
     <recent_temporary>
       <list>
@@ -410,7 +455,8 @@
       <workItem from="1741572574832" duration="9982000" />
       <workItem from="1741582668956" duration="6383000" />
       <workItem from="1741603270632" duration="8478000" />
-      <workItem from="1741654952504" duration="55129000" />
+      <workItem from="1741654952504" duration="58157000" />
+      <workItem from="1742273923696" duration="11075000" />
     </task>
     <servers />
   </component>

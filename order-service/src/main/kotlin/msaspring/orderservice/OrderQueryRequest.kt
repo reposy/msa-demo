@@ -1,7 +1,7 @@
 package msaspring.orderservice
 
 data class OrderQueryRequest(
-    val queryType: String, // "findById" 또는 "getRecent"
+    val queryType: String = "",
     val orderId: Long? = null,
     val count: Int? = null
 )

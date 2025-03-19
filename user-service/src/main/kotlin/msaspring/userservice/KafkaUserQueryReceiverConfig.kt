@@ -20,14 +20,14 @@ class KafkaUserQueryReceiverConfig {
             "bootstrap.servers" to bootstrapServers,
             "key.deserializer" to StringDeserializer::class.java,
             "value.deserializer" to JsonDeserializer::class.java,
-            "group.id" to "order-query-response-group",
+            "group.id" to "user-query-response-group",
             "auto.offset.reset" to "earliest"
         )
         val jsonDeserializer = JsonDeserializer(UserQueryResponse::class.java)
         jsonDeserializer.addTrustedPackages("*")
         val receiverOptions = ReceiverOptions.create<String, UserQueryResponse>(props)
             .withValueDeserializer(jsonDeserializer)
-            .subscription(listOf("order-query-response"))
+            .subscription(listOf("user-query-response"))
         return KafkaReceiver.create(receiverOptions)
     }
 }
